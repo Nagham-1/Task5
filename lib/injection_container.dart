@@ -5,6 +5,7 @@ import 'package:task5/core/network/network_info.dart';
 import 'package:task5/features/products/data/datasources/product_remote_datasource.dart';
 import 'package:get_it/get_it.dart';
 import 'package:task5/features/products/data/repositories/product_repository_impl.dart';
+import 'package:task5/features/products/presentation/cubit/product_cubit.dart';
 import 'features/products/domain/repositories/product_repository.dart';
 import 'features/products/domain/usecase/get_all_product.dart';
 
@@ -34,6 +35,9 @@ Future<void> init() async {
       networkInfo: sl(),
     ),
   );
+
+  //cubit
+  sl.registerFactory(() => ProductCubit(sl()));
 
   // UseCase
   sl.registerLazySingleton(() => GetAllProducts(productRepository: sl()));
