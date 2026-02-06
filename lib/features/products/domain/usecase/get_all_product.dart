@@ -5,7 +5,7 @@ import 'package:task5/features/products/domain/repositories/product_repository.d
 
 class GetAllProducts {
   final ProductRepository productRepository;
-  GetAllProducts(this.productRepository);
+  GetAllProducts({required this.productRepository});
 
   Future<Either<Failure,List<Product>>> call() async {
       return await productRepository.getAllProducts();

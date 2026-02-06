@@ -6,6 +6,8 @@ abstract class ProductRemoteDataSource{
 }
 
 class ProductRemoteDataSourceImpl implements ProductRemoteDataSource {
+   final DioHelper dioHelper;
+   ProductRemoteDataSourceImpl(this.dioHelper);
 
   @override
   Future<List<ProductModel>> getAllProducts() async {

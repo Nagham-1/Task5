@@ -9,7 +9,7 @@ import '../../domain/repositories/product_repository.dart';
 class ProductRepositoryImpl implements ProductRepository{
   final ProductRemoteDataSource productRemoteDataSource;
   final NetworkInfo networkInfo;
-  ProductRepositoryImpl(this.productRemoteDataSource, this.networkInfo);
+  ProductRepositoryImpl({required this.productRemoteDataSource,required this.networkInfo});
 
   @override
   Future<Either<Failure,List<Product>>> getAllProducts() async {
