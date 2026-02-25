@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'features/products/presentation/cubit/product_cubit.dart';
+import 'package:task5/features/products/presentation/cubit/product_cubit.dart';
+import 'core/injectable/injection.dart';
 import 'features/products/presentation/pages/products_page.dart';
-import 'injection_container.dart' as di;
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-  await di.init();
+  await configureDependencies();
   runApp(const MyApp());
 }
 
@@ -18,9 +18,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (context) => di.sl<ProductCubit>(),
+          create: (_) => getIt<ProductCubit>(),
         child: const ProductsPage(),
-      ),
+      )
     );
   }
 }

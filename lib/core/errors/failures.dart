@@ -16,5 +16,10 @@ class NetworkFailure extends Failure {
   const NetworkFailure({required super.message});
 }
 
+class UnExpectedFailure extends Failure{
+  const UnExpectedFailure({required super.message});
+}
+
+
 
 

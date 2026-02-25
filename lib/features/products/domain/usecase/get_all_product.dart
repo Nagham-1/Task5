@@ -1,8 +1,10 @@
 import 'package:dartz/dartz.dart';
+import 'package:injectable/injectable.dart';
 import 'package:task5/core/errors/failures.dart';
 import 'package:task5/features/products/domain/entities/product.dart';
 import 'package:task5/features/products/domain/repositories/product_repository.dart';
 
+@LazySingleton()
 class GetAllProducts {
   final ProductRepository productRepository;
   GetAllProducts({required this.productRepository});

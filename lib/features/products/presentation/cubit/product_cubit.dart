@@ -1,7 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:task5/features/products/domain/usecase/get_all_product.dart';
 import 'package:task5/features/products/presentation/cubit/product_state.dart';
 
+@injectable
 class ProductCubit extends Cubit<ProductState>{
   final GetAllProducts getAllProducts;
 
